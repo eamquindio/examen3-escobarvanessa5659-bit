@@ -26,6 +26,11 @@ public class Vehiculo {
      */
     public Vehiculo(String placa, int modelo, String color, Propietario propietario, String tipo) {
         // TODO: Implementar constructor
+        this.placa = placa;
+        this.modelo = modelo;
+        this.color = color;
+        this.propietario = propietario;
+        this.tipo = tipo;
     }
 
     // ==================== GETTERS ====================
@@ -76,6 +81,16 @@ public class Vehiculo {
      */
     public double obtenerTarifaHora() {
         // TODO: Implementar método usando switch
-        return 0;
+        // Utilizar switch para determinar la tarifa segun tipo de vehiculo
+        switch (tipo) {
+            case "SEDAN":
+                return 1500;
+            case "SUV":
+                return 2300;
+            case "CAMION":
+                return 3000;
+            default:
+                return 0; // En caso de tipo desconocido
+        }
     }
 }
